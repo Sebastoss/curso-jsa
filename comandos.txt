@@ -1,0 +1,6 @@
+Codigos para programar y probar en consola:
+
+
+window.innerHeight // en consola muestra el alto del documento.
+
+window.outerHeight // en consola muestra el alto total incluyendo toda la ventana del navegador.

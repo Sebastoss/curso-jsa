@@ -6,7 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    section h2 { background-color: hotpink;}
+
+    .ejemplo {
+        background-color: seagreen;
+    }
+</style>
 <body>
+    <h1>Introducción a JS -> ECMAScript</h1>
+    <p>
+        Leng interpretado -> Programa (PHP apache / Java / JS
+                                navegador)
+        Leng compilados   -> Sist Op
+        
+
+
+
+
+    </p>
+
+    <section id="banner">
+        <img src="" alt="">
+        <h2 style="color: white;">Hola!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facere repellendus, non, accusamus doloremque fuga, possimus voluptas quasi rerum voluptatibus in saepe. Assumenda temporibus amet, ullam maxime iusto quod quam.</p>
+    </section>
+
+<script>
+    //BOM -> Browser Object Model -> Es una API, es una representacion en modelo de objeto de lo que es el navegador
+
+    //DOM -> Document Object Model -> es una API, es la representacion en modelo de objeto de lo que es el documento HTML -> document
+
+    //window.confirm();
+    //window.document.write();
+
+
+    //elemento.childNodes -> tiene en cuenta todos los nodos hijo sean de texto o de otras etiquetas
+
+    //elemento.children -> tiene en cuenta solo a las etiquetas hijo
+
+    //SELECTORES DE ELEMENTOS
+    //document.children[0].children[1].children[0]
+ 
+    //document.querySelector(selectorCSS)
+    //document.getElementsByTagName('section').getElementsByTagName('h2')
+    document.querySelector('section h2');
     
+    var tituloSeccion = document.querySelector('#banner h2');
+    //textContent -> Mozilla / Opera 
+    //innertext -> IE
+    //PROPIEDADES DE ELEMENTOS HTML
+    tituloSeccion.innerText = "Chau!"; //Texto plano
+    tituloSeccion.innerHTML = "<em> Chau! </em>"; //Texto HTML
+
+    //tituloSeccion.style -> pseudo api que solo muestra y permite setear las prop css en linea / los estilos en linea siempre tienen mas prioridad que las hojas de estilo
+    
+    //tituloSeccion.style.backgroundColor = "indianred";
+
+    tituloSeccion.classList.add("ejemplo"); //Agregar una clase
+    tituloSeccion.classList.remove("ejemplo"); //Remover una Clase
+    tituloSeccion.classList.toggle("ejemplo"); //Intercambia
+
+    
+
+</script>
 </body>
 </html>
