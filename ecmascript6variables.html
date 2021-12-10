@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ECMA Script 6</h1>
+
+<script>
+    //Creacion de Variable ->
+    //constructor var -> se almacena como parte del objeto window
+    var a = 10;
+
+    //constructor let y const -> ninguno almacena en window
+    // let -> permite reescribir el valor
+    let c = 10;
+    c = 20; // puedo cambiar el valor (sin let)
+    
+    // const -> NO PERMITE SOBREESCRIBIR
+    const d = 10;
+    //d = 50 -> no puedo sobreescribir la variable
+
+
+    //Scoope
+    //function (){ //TODAS SON LOCALES DENTRO DE UNA FUNCION
+      //  var z = "local"; //-> existe solo dentro de la funcion
+        //let x = "local"; //-> existe solo dentro de la funcion
+        //const y = "local"; //-> existe solo dentro de la funcion
+   // }  
+
+    var z = 10;
+    let x = 10;
+    if(true){//SOLO SON LOCALES LET Y CONST, VAR ES GLOBAL
+        var z = "global"; //-> se asocia a window
+        let x = "local"; //-> existe solo dentro de la funcion
+        const y = "local"; //-> existe solo dentro de la funcion 
+        console.log(x);       
+    }
+
+    //Redeclaracion
+    var m = 10;
+    var m = true; //-> puedo volver a declararla
+    
+    let n = 10;
+    //let n = 10;//-> NO puedo volver a declararla
+
+    //Tipos de Dato
+    //Primitivos / Simples
+    let dato;
+    dato = 123;
+    dato = 123.5;
+    dato = "strings";
+    dato = true;
+
+    dato = null;
+    dato = undefined;
+
+    //Objeto / Complejos
+    dato = ['valor1', 'valor2']; //Array
+    dato = {x: 'valor1', z: 'valor2'}; //Objeto
+
+    dato = function (){} //Funciones
+
+    dato = new Date; //Fecha
+
+
+    //Copia por valor y copia por referencia
+    //Todos los datos primitivos se copian por valor -> cada copia es independiente entre si
+    let var1 = 25;
+    let var2 = var1;
+
+    var1 +=10;
+
+    //Todos los datos de tipo objeto se copian por referencia -> ambas variables apuntan a la MISMA UNIDAD DE MEMORIA
+    //new Array()
+    const obj1 = ['Valor1', 'Valor2'];
+    const obj2 = obj1;
+
+
+    //obj1 = ['NuevoArray'];
+    obj1.push('Valor3');
+
+    //Puedo guardar un objeto en una Constante y modificar sus indices internos porque lo que es constante no son los datos, lo que es constante es la REFERENCIA a ese objeto
+
+    //JSON -> JS Object Notacion -> es un estandar de escritura de datos utilizando la sintaxis de objetos propia de JS
+
+    console.log(window.a);
+
+</script>
+</body>
+</html>

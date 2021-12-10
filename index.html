@@ -19,10 +19,10 @@
         Leng interpretado -> Programa (PHP apache / Java / JS
                                 navegador)
         Leng compilados   -> Sist Op
-        
 
+        Leng fuertemente tipados -> No puedo cambiar el tipo de dato de una var Java, C, Python, (TS)
 
-
+        Legn debilmente tipados -> Si puedo cambiar el tipo de dato de una var PHP, JS 
 
     </p>
 
@@ -55,19 +55,21 @@
     var tituloSeccion = document.querySelector('#banner h2');
     //textContent -> Mozilla / Opera 
     //innertext -> IE
+
+
     //PROPIEDADES DE ELEMENTOS HTML
     tituloSeccion.innerText = "Chau!"; //Texto plano
     tituloSeccion.innerHTML = "<em> Chau! </em>"; //Texto HTML
 
     //tituloSeccion.style -> pseudo api que solo muestra y permite setear las prop css en linea / los estilos en linea siempre tienen mas prioridad que las hojas de estilo
     
-    //tituloSeccion.style.backgroundColor = "indianred";
+    tituloSeccion.style.backgroundColor = "indianred";
 
     tituloSeccion.classList.add("ejemplo"); //Agregar una clase
     tituloSeccion.classList.remove("ejemplo"); //Remover una Clase
     tituloSeccion.classList.toggle("ejemplo"); //Intercambia
 
-    
+
 
 </script>
 </body>

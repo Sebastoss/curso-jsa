@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EMAScript 6 -> Funciones</h1>
+
+<script>
+    a(); //llama a la funcion incluso aunque este antes de la declaracion de la funcion
+
+    //Sintaxis Declarativa
+    function a (){
+        console.log('Hola');
+    }
+
+    //Sintaxis Expresiva
+        //Func tradicional -> como metodo de un objeto
+        const tradicional = function (){
+            console.log('Hola tradicional');
+        }
+        tradicional(); //en declaracion expresiva no podes llamar a la funcion antes de declararla
+    
+        //Func flecha -> el resto de las veces
+        const flecha = (parametros) => {
+            //codigo...
+            console.log('Hola flecha');
+            return true;
+        }
+        flecha();
+
+        //Variantes
+            //Segun la cantidad de parametros
+                () => {}; //sin param 
+                parametro1 => {}; //1 param
+                (parametro1, parametro2) => {}; //+1 parametro
+            //Segun la cantidad de lineas
+                () => console.log(); //1 linea
+                () => {//1 linea
+                    console.log()
+                    document.write()
+                };
+            //Segun la cant de lineas
+                () => true;
+                //() => return true;
+
+        console.log(tradicional)
+        console.dir(flecha)
+</script>
+</body>
+</html>
