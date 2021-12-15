@@ -4,3 +4,11 @@ Codigos para programar y probar en consola:
 window.innerHeight // en consola muestra el alto del documento.
 
 window.outerHeight // en consola muestra el alto total incluyendo toda la ventana del navegador.
+
+
+
+Ejercicio: tomar la tabla prearmada y dentro del tbody agregar los elemento TR y TD usando createElement. Utilizar el siguiente array para generar los datos
+
+PLUS -> Usar fragment para agregar las cosas
+
+PLUS -> hacer toda la tabla con JS

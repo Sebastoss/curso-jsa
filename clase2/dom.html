@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ejemplo {
+            background-color: rgb(29, 158, 137);
+        }
+    </style>
+</head>
+<body>
+    <h1>Dom - Continuacion</h1>
+
+    <ul>
+        
+    </ul>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+    
+        <tbody id="objetivo"></tbody>
+    </table>
+    
+
+<script>
+    const empleados = ["Carlos", "Daniela", "Teresa", "Pedro"];
+    empleados[20]="Pancracio";
+
+
+    for(let i = 0; i < empleados.length ; i++){
+        const empleado = empleados[i];
+        console.dir(empleado);
+    }
+    /* funcion callback
+    function foreach( funcion ){
+        function();
+    }*/
+
+             /* cada uno de los valores/indice/array que estoy recorriendo
+    empleados.foreach( (empleado, indice, array)=>{
+
+    } );*/
+
+    const ul = document.querySelector("ul");
+
+
+    empleados.forEach( (empleado)=>{
+        console.log(empleado);
+        //ul.innerHTML += '<li>'+empleado+'</li>';
+
+        //Concatenacion por plantilla / templates con los tildes invertidos ``
+        ul.innerHTML += `<li>${empleado}</li>`;
+
+
+
+    } );
+
+    //Manejo avanzado del DOM
+    //Creacion de un elemento
+    const h2 = document.createElement('h2');
+
+    h2.innerText = 'Hola!';
+
+    h2.classList.add('ejemplo');
+
+    h2.style.color = 'seagreen';
+
+
+    //Agregar un elemento hijo a elemento seleccionado
+    //document.querySelector('body').appendChild(h2);
+    document.body.appendChild(h2); //se agrega como ultimo elemento
+
+    //document.body.insertBefore(h2, ul); //se agrega dentro del elemento seleccionado y antes del elemento referido en el segundo parametro
+    
+
+    console.dir(h2);
+
+
+   // const ul = document.querySelector("ul");
+   const frag = document.createDocumentFragment();
+
+
+    empleados.forEach( (empleado)=>{
+        //Por concatenacion
+        //ul.innerHTML += '<li>'+empleado+'</li>';
+        //Concatenacion por plantilla / templates con los tildes invertidos ``
+        //ul.innerHTML += `<li>${empleado}</li>`;
+
+        //Por creacion de elemento
+        const li = document.createElement('li');
+        li.innerText = empleado;
+        //ul.appendChild(li);
+        frag.appendChild(li);
+    } );
+
+    ul.appendChild(frag);
+ 
+    let clientes = [
+        ["Carlos", "Sanchez", 54],
+        ["Teresa", "Rodriguez", 28],
+        ["Daniela", "Perez", 37],
+    ];
+    
+   /*const table = document.querySelector('tbody');
+   const celda = document.createElement('td');
+    const frag2 = document.createDocumentFragment();
+
+    clientes.forEach((cliente)=>{
+        let fila = document.createElement('tr')
+        cliente.forEach((atributo)=> {
+            let celda = document.createElement('td')
+            celda.innerHTML = atributo;
+            fila.appendChild(celda)
+        })
+        frag2.appendChild(fila);
+
+    } )
+
+    table.appendChild(frag2);
+*/
+
+
+
+
+
+</script>
+</body>
+</html>

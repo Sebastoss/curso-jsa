@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+    
+        <tbody id="objetivo">
+
+        </tbody>
+    </table>
+    
+    <script>
+   
+   const clientes = [
+        ["Carlos", "Sanchez", 54],
+        ["Teresa", "Rodriguez", 28],
+        ["Daniela", "Perez", 37],
+    ];
+
+    const tbody = document.querySelector("#objetivo");
+    const frag = document.createDocumentFragment();
+
+    clientes.forEach( cliente =>{
+        const tr = document.createElement('tr');
+        
+        cliente.forEach( prop => {
+            const td = document.createElement('td');
+            td.innerText = prop;
+            tr.appendChild(td);
+        } );
+
+        frag.appendChild(tr);
+    } );
+
+    tbody.appendChild(frag);
+
+
+    </script>
+</body>
+</html>

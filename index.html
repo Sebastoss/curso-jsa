@@ -33,7 +33,7 @@
     </section>
 
 <script>
-    //BOM -> Browser Object Model -> Es una API, es una representacion en modelo de objeto de lo que es el navegador
+    //BOM -> Browser Object Model -> Es una API, es una representacion en modelo de objeto de lo que es el navegador  -> window
 
     //DOM -> Document Object Model -> es una API, es la representacion en modelo de objeto de lo que es el documento HTML -> document
 
@@ -45,10 +45,13 @@
 
     //elemento.children -> tiene en cuenta solo a las etiquetas hijo
 
+    //elemento.parentNode -> accede desde un elemento hacia su elemento padre
+
     //SELECTORES DE ELEMENTOS
     //document.children[0].children[1].children[0]
  
-    //document.querySelector(selectorCSS)
+    //document.querySelector(selectorCSS) -> trae un unico elemento / si existe mas de uno que cumpla con el selector, trae solo el primero
+    
     //document.getElementsByTagName('section').getElementsByTagName('h2')
     document.querySelector('section h2');
     

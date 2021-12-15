@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="alert('Hola!')" >Eventos</h1>
+    <h1>Segundo titulo</h1>
+
+    <p>Es algo que sucede como consecuencia de otra accion recibida por un objeto particular</p>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem placeat aperiam, accusamus e</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem placeat aperiam, accusamus e</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem placeat aperiam, accusamus e</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem placeat aperiam, accusamus e</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem placeat aperiam, accusamus e</p>
+    
+<script>
+    const h1 = document.querySelector('h1');
+    //Tiene el limite de que solo se ejecuta el ultimo evento asociado
+    h1.onclick = function(){
+        alert("Chau!");
+    }
+
+    h1.onclick = null;
+    //h1.onclick()
+
+    //elemento.addEventListener(string:nombreDeEvento, function:callBack) -> Puedo tener multiples func de callback asociadas al mismo elemento en el mismo tipo de evento.
+
+    /*
+    h1.addEventListener('click', ()=>{
+        console.log('Hiciste Click')
+    } );
+
+    h1.addEventListener('click', ()=>{
+        console.log('Hiciste Click2')
+    } );
+
+    h1.addEventListener('click', ()=>{
+        console.log('Hiciste Click3')
+    } );*/
+
+    const h1B = document.querySelector('h1:nth-of-type(2)');
+
+    const funcion = (ev)=>{
+        console.log(ev.target);
+    }
+
+    h1.addEventListener('click', funcion );
+    h1B.addEventListener('click', funcion );
+
+    /*
+    h1.addEventListener('click', (ev)=>{
+        console.log(ev.target)
+    } );
+
+    h1B.addEventListener('click', (ev)=>{
+        console.log(ev.target)
+    } );
+
+    console.log(h1);console.dir(h1);*/
+
+    //querySelectorAll
+
+    const parrafos = document.querySelectorAll("p");
+    parrafos.forEach( parrafo => {
+        parrafo.addEventListener('mouseover', ev => {
+            console.log(ev.target.innerText);
+        })
+    } );
+</script>
+</body>
+</html>
